@@ -4,7 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvSpinnerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/doviz_seciniz"
+        android:textColor="@color/titles"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate" />
 
     <TextView
         android:id="@+id/tvDate"
@@ -13,8 +27,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        android:textColor="@color/date"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:textSize="22sp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,9 +40,120 @@
         android:id="@+id/spnCurrency"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDate" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSpinnerTitle" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnCurrency"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/tvSpAlisTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
+            android:text="@string/serbest_piyasa_al"
+            android:textColor="@color/titles"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSpSatisTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/serbest_piyasa_sat"
+            android:textColor="@color/titles"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSpAlis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/none"
+            android:textColor="@color/results"
+            app:layout_constraintEnd_toEndOf="@+id/tvSpAlisTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvSpAlisTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvSpAlisTitle" />
+
+        <TextView
+            android:id="@+id/tvSpSatis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/none"
+            android:textColor="@color/results"
+            app:layout_constraintEnd_toEndOf="@+id/tvSpSatisTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvSpSatisTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvSpSatisTitle" />
+
+        <TextView
+            android:id="@+id/tvBankaAlisTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@string/banka_al"
+            android:textColor="@color/titles"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvSpAlisTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvSpAlisTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvSpAlis" />
+
+        <TextView
+            android:id="@+id/tvBankaSatisTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@string/banka_sat"
+            android:textColor="@color/titles"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvSpSatisTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvSpSatisTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvSpSatis" />
+
+        <TextView
+            android:id="@+id/tvBankaAlis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/none"
+            android:textColor="@color/results"
+            app:layout_constraintEnd_toEndOf="@+id/tvBankaAlisTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvBankaAlisTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvBankaAlisTitle" />
+
+        <TextView
+            android:id="@+id/tvBankaSatis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/none"
+            android:textColor="@color/results"
+            app:layout_constraintEnd_toEndOf="@+id/tvBankaSatisTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvBankaSatisTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvBankaSatisTitle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

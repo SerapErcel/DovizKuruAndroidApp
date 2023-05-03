@@ -9,11 +9,14 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
-import com.serapercel.dovizkuru.model.Currency
 
 class MainActivity : AppCompatActivity() {
     lateinit var tvDate: TextView
     lateinit var spinner: Spinner
+    lateinit var tvSpAlis: TextView
+    lateinit var tvSpSatis: TextView
+    lateinit var tvBankaAlis: TextView
+    lateinit var tvBankaSatis: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,19 +31,32 @@ class MainActivity : AppCompatActivity() {
 
         tvDate = findViewById<TextView?>(R.id.tvDate)
         spinner = findViewById(R.id.spnCurrency)
+        tvSpAlis = findViewById<TextView?>(R.id.tvSpAlis)
+        tvSpSatis = findViewById<TextView?>(R.id.tvSpSatis)
+        tvBankaAlis = findViewById<TextView?>(R.id.tvBankaAlis)
+        tvBankaSatis = findViewById<TextView?>(R.id.tvBankaSatis)
+
         tvDate.text = "Bugün: $date"
 
-        val adapter : ArrayAdapter<Currency> = ArrayAdapter(this, android.R.layout.simple_spinner_item, currencyList)
+        val currencyNameList = mutableListOf<String>()
+        currencyList.forEach { currencyNameList.add(it.Isim) }
+
+        val adapter: ArrayAdapter<String> =
+            ArrayAdapter(this, android.R.layout.simple_spinner_item, currencyNameList)
         spinner.adapter = adapter
 
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
                 position: Int,
                 id: Long
             ) {
-                TODO("Not yet implemented")
+                tvSpAlis.text = currencyList[position].ForexBuying
+                tvSpSatis.text = currencyList[position].ForexSelling
+                tvBankaAlis.text = currencyList[position].BanknoteBuying
+                tvBankaSatis.text = currencyList[position].BanknoteSelling
+
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {

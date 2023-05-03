@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">DovizKuru</string>
+    <string name="app_name">Döviz Kuru</string>
+    <string name="serbest_piyasa_al">Serbest Piyasa Alış</string>
+    <string name="serbest_piyasa_sat">Serbest Piyasa Satış</string>
+    <string name="banka_al">Banka Alış</string>
+    <string name="banka_sat">Banka Satış</string>
+    <string name="doviz_seciniz">Döviz Seçiniz</string>
+    <string name="none">-</string>
 </resources>
